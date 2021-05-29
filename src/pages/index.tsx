@@ -1,5 +1,5 @@
-import Main from 'components/Main'
+import HomeTamplate from 'templates/Home'
 
 export default function Home() {
-  return <Main />
+  return <HomeTamplate />
 }

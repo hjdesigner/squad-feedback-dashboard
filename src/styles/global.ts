@@ -1,6 +1,21 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`
+export type Theme = {
+  theme: typeof lightTheme
+}
+
+export const lightTheme = {
+  background: '#f9fafc',
+  container: '#FFFFFF',
+  border: '#000000',
+  shadow: '0px 2px 1px #dedede'
+}
+
+export const darkTheme = {
+  background: '#000000'
+}
+
+export const GlobalStyles = createGlobalStyle<Theme>`
   * {
     margin: 0;
     padding: 0;
@@ -16,8 +31,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    background: ${({ theme }) => theme.background};
+    font-family: 'Roboto', sans-serif;
   }
 `
-
-export default GlobalStyles
